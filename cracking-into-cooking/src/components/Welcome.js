@@ -10,7 +10,7 @@ export default class Welcome extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          signedIn: true
+          signedIn: false
         }
         this.signingIn = this.signingIn.bind(this);
   }
