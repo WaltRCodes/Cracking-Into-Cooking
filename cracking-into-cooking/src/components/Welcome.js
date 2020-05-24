@@ -6,6 +6,7 @@ import {
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Profile from './Profile';
+import Search from './Search'
 export default class Welcome extends Component {
     constructor(props) {
         super(props);
@@ -24,7 +25,7 @@ export default class Welcome extends Component {
     return (
       <div>
           {this.state.signedIn ?
-            <Profile />
+            <Search />
         :
             <BrowserRouter>
                 <Route exact strict path="/" render={() => <div><SignIn Allowed={this.signingIn}/></div>} />
