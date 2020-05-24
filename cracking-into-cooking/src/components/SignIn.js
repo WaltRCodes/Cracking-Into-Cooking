@@ -8,19 +8,19 @@ export default class SignIn extends Component {
         super(props);
         this.state = {
           users: [],
-          email:'',
+          userName:'',
           password:'',
           error:''
         }
 
         this.onChangeHandler = this.onChangeHandler.bind(this);
-        this.signInWithEmailAndPasswordHandler = this.signInWithEmailAndPasswordHandler.bind(this);
-  }
+        this.signInWithNameAndPasswordHandler = this.signInWithNameAndPasswordHandler.bind(this);
+    }
 
     componentDidMount() {
         {/* call the api on page load */}
         this.callApi();
-}
+    }
     async callApi() {
         try {
             const response = await axios.get('/walter_api/v2/users');
@@ -32,54 +32,57 @@ export default class SignIn extends Component {
         }
     }
     
-    signInWithEmailAndPasswordHandler = (event,email, password) => {
+    signInWithNameAndPasswordHandler = (event) => {
         event.preventDefault();
         // auth.signInWithEmailAndPassword(email, password).catch(error => {
         // setError("Error signing in with password and email!");
         //   console.error("Error signing in with password and email", error);
         // });
+        if(this.state.users.findIndex(user => user.userName===this.state.userName&&user.password===this.state.password)){
+            this.props.Allowed();
+        } else{
+            this.setState({error: <div>Sorry, no login was found</div>});
+        }
+
+
       };
       onChangeHandler = (event) => {
-          const {name, value} = event.currentTarget;
+          //const {name, value} = event.currentTarget;
         
-          if(name === 'userEmail') {
-              setEmail(value);
+          if(event.target.name === 'userName') {
+              this.setState({userName:event.target.value});
           }
-          else if(name === 'userPassword'){
-            setPassword(value);
+          else if(event.target.name === 'userPassword'){
+            this.setState({password:event.target.value});
           }
       };
 
       render() {
         return (
-            <div className="main">
+            <div>
               <h1>Sign In</h1>
               <div >
-                {error !== null && <div>{error}</div>}
+                {this.state.error}
                 <form>
-                  <label htmlFor="userEmail">
-                    Email:
+                  <label>
+                    UserName:
                   </label>
                   <input
-                    type="email"
-                    name="userEmail"
-                    value = {email}
-                    placeholder="test@gmail.com"
-                    id="userEmail"
-                    onChange = {(event) => onChangeHandler(event)}
+                    type="text"
+                    name="userName"
+                    placeholder=""
+                    onChange = {this.onChangeHandler}
                   />
-                  <label htmlFor="userPassword">
+                  <label>
                     Password:
                   </label>
                   <input
                     type="password"
                     name="userPassword"
-                    value = {password}
-                    placeholder="Your Password"
-                    id="userPassword"
-                    onChange = {(event) => onChangeHandler(event)}
+                    placeholder="Password"
+                    onChange = {this.onChangeHandler}
                   />
-                  <button onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}}>
+                  <button onClick = {this.signInWithNameAndPasswordHandler}>
                     Sign in
                   </button>
                 </form>
