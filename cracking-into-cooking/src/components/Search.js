@@ -5,7 +5,8 @@ export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: ""
+      searchTerm: "",
+      resultsHTML:''
          
     }
     {/* make all the mehods that will be utilized*/}
@@ -59,7 +60,7 @@ export default class Search extends Component {
     return (
       <div>
             <form onSubmit={this.makeSearch}>
-            <h1>Please make a Search</h1>
+            <h1>What Ingredients do you already have?</h1>
             <label>
                 Search
                 <input type="text" onChange={this.takeTerm} placeholder="search term"/>

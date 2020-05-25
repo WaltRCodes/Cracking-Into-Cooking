@@ -11,21 +11,23 @@ export default class Welcome extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          signedIn: false
+          signedIn: false,
+          user:0
         }
         this.signingIn = this.signingIn.bind(this);
   }
 
-  signingIn(){
+  signingIn(id){
     {/* update the ymbol in state */}
-    this.setState({signedIn: true});
+    this.setState({signedIn: true,user:id});
+    //console.log(this.state.user);
   }
 
   render() {
     return (
       <div>
           {this.state.signedIn ?
-            <Search />
+            <Search id={this.state.user}/>
         :
             <BrowserRouter>
                 <Route exact strict path="/" render={() => <div><SignIn Allowed={this.signingIn}/></div>} />

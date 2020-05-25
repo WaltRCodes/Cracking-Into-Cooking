@@ -38,8 +38,10 @@ export default class SignIn extends Component {
         // setError("Error signing in with password and email!");
         //   console.error("Error signing in with password and email", error);
         // });
-        if(this.state.users.findIndex(user => user.userName===this.state.userName&&user.password===this.state.password)!=-1){
-            this.props.Allowed();
+        let arrayIndex =this.state.users.findIndex(user => user.userName===this.state.userName&&user.password===this.state.password);
+        if(arrayIndex!=-1){
+            console.log(this.state.users[arrayIndex].id);
+            this.props.Allowed(this.state.users[arrayIndex].id);
         } else{
             this.setState({error: <div>Sorry, no login was found</div>});
         }
