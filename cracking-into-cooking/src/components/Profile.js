@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Recipe from './Recipe';
+import {Link } from "react-router-dom";
 export default class Profile extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,8 @@ export default class Profile extends Component {
          
     }
     {/* make all the mehods that will be utilized*/}
-    this.makeSearch = this.makeSearch.bind(this);
+    this.bringUpIngredients = this.bringUpIngredients.bind(this);
+    this.bringUpRecipes = this.bringUpRecipes.bind(this);
   }
   async callApi(term) {
     try {
@@ -25,7 +27,7 @@ export default class Profile extends Component {
       let elements = <div>Error</div>;
       if (term==='recipes'){
         elements = response.data.map(recipe => <Recipe id={recipe.id}  search={false} title={recipe.title} image={recipe.image} 
-            ingredients={recipe.missedIngredients.map(ingredient => <div>{ingredient.originalString}<div id={ingredient.id}></div></div>)}
+            ingredients={recipe.ingredients.map(ingredient => <div>{ingredient.originalString}<div id={ingredient.id}></div></div>)}
         deleteRecipe={() => {this.deleteApi("recipes",recipe.id); document.getElementById(recipe.id).innerHTML="Deleted Recipe!";}}
         editRecipe={
             <Link to="/RecipeForm" onClick={() => this.props.capture("recipes",recipe.name,recipe.image,recipe.description,recipe.ingredients)} >
@@ -56,33 +58,33 @@ export default class Profile extends Component {
     }
   }
 
-  componentDidMount() {
-    {/* call the api on page load */}
-    this.callIngredients();
-    this.callRecipes();
-}
+//   componentDidMount() {
+//     {/* call the api on page load */}
+//     this.callIngredients();
+//     this.callRecipes();
+// }
   
-  async callIngredients() {
-    try {
-        const response = await axios.get('/walter_api/v2/ingredients');
-        //console.log(response.data);
-        {/* store api data in state */}
-        this.setState({ingredients:response.data});
-    } catch (e) {
-    console.log(e);
-    }
-}
+//   async callIngredients() {
+//     try {
+//         const response = await axios.get('/walter_api/v2/ingredients');
+//         //console.log(response.data);
+//         {/* store api data in state */}
+//         this.setState({ingredients:response.data});
+//     } catch (e) {
+//     console.log(e);
+//     }
+// }
 
-async callRecipes() {
-    try {
-        const response = await axios.get('/walter_api/v2/recipes');
-        //console.log(response.data);
-        {/* store api data in state */}
-        this.setState({recipes:response.data});
-    } catch (e) {
-    console.log(e);
-    }
-}
+// async callRecipes() {
+//     try {
+//         const response = await axios.get('/walter_api/v2/recipes');
+//         //console.log(response.data);
+//         {/* store api data in state */}
+//         this.setState({recipes:response.data});
+//     } catch (e) {
+//     console.log(e);
+//     }
+// }
 
 async deleteApi(term,id) {
     console.log("This is running",id);
@@ -97,15 +99,21 @@ async deleteApi(term,id) {
   }
 
   
-  
+  bringUpIngredients(){
+    this.callApi('ingredients');
+  }
+
+  bringUpRecipes(){
+    this.callApi('recipes');
+}
 
   render() {
     return (
       <div>
             
             <h1>What Ingredients do you already have?</h1>
-            <button>See what Recipes you saved or made</button>
-            <button>See what Ingredients you have added</button>
+            <button onClick={this.bringUpRecipes}>See what Recipes you saved or made</button>
+            <button onClick={this.bringUpIngredients}>See what Ingredients you have added</button>
             {this.state.resultsHTML}
       </div>
       

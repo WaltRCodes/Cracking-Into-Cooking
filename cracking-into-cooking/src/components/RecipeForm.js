@@ -106,7 +106,7 @@ async callRecipes() {
             <br />
             <label>
                 Ingredients
-                <input type="number" onChange={this.takeIngredients} value={this.props.ingredients} placeholder="0"/>
+                <input type="text" onChange={this.takeIngredients} value={this.props.ingredients} placeholder="0"/>
             </label>
             <br />
             <label>
