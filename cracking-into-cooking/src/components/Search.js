@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-
+import Recipe from './Recipe';
 export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchTerm: "",
-      resultsHTML:''
+      resultsHTML:'',
+      ingredients:[],
+      recipes:[]
+
          
     }
     {/* make all the mehods that will be utilized*/}
@@ -21,26 +24,45 @@ export default class Search extends Component {
     //const body = await response.json();
       //console.log(body);
       console.log(response.data);
-    //   let elements = response.data.map(wine => 
-    //     <div key={wine["id"]} className="wine" tabIndex="1">
-    //       <img src={wine["picture"]} height="200px" width="100%"/>
-    //       <h4>{wine["name"]} ({wine["year"]})</h4>
-    //       <h5>{wine["grapes"]}</h5>
-    //       <h6>{wine["country"], wine["region"]}</h6>
-    //       <p>{wine["description"]}</p>
-    //       <button onClick={() => this.deleteApi(wine["id"])}>Delete This</button>
-    //     </div>);
-    //     {/* store the values in state*/}
-    //   this.setState({
-    //     wines: response.data,
-    //     winesHTML: elements
-    //   })
+      let elements = response.data.map(recipe => <Recipe title={recipe.title} image={recipe.image} ingredients={recipe.missedIngredients.map(ingredient => <div>{ingredient.originalString}</div>)}/>);
+        {/* store the values in state*/}
+      this.setState({
+        resultsHTML: elements
+      })
     } catch (e) {
       console.log(e);
     }
   }
+
+  componentDidMount() {
+    {/* call the api on page load */}
+    this.callDatabase("ingredients");
+    this.callDatabase("recipes");
+}
   
-  
+  async callDatabase(term) {
+    try {
+        const response = await axios.get('/walter_api/v2/'+term);
+        //console.log(response.data);
+        {/* store api data in state */}
+        this.setState({term:response.data});
+    } catch (e) {
+    console.log(e);
+    }
+}
+
+async postDatabase(term,object) {
+    try {
+      const response = await axios.post('/walter_api/v2/'+term,object);
+      
+      console.log(response.data);
+      console.log(response);
+      
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   makeSearch(event){
     event.preventDefault();
     
@@ -72,7 +94,7 @@ export default class Search extends Component {
                 <input type="submit" value="Submit"/>
             </label>
           </form>
-            
+            {this.state.resultsHTML}
       </div>
       
     )
