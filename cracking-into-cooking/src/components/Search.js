@@ -18,13 +18,30 @@ export default class Search extends Component {
   }
   async callApi() {
     try {
-      const response = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_KEY}&ingredients=${this.state.searchTerm}&number=2&limitLicense=false&ranking=1&ignorePantry=false`);
+      const response = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_KEY}&ingredients=${this.state.searchTerm}&number=5&limitLicense=false&ranking=1&ignorePantry=false`);
       {/* call the API and create HTML elements*/}
       //const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_KEY}&ingredients=${this.state.searchTerm}&number=2&limitLicense=false&ranking=1&ignorePantry=false`);
     //const body = await response.json();
       //console.log(body);
       console.log(response.data);
-      let elements = response.data.map(recipe => <Recipe title={recipe.title} image={recipe.image} ingredients={recipe.missedIngredients.map(ingredient => <div>{ingredient.originalString}</div>)}/>);
+      let elements = response.data.map(recipe => <Recipe title={recipe.title} image={recipe.image} 
+        ingredients={recipe.missedIngredients.map(ingredient => <div>{ingredient.originalString}<button onClick={() => this.postDatabase("ingredients",{
+        "id": null,//put check here later and make button diappear
+        "name": ingredient.name,
+        "amount": ingredient.amount,
+        "image": ingredient.image,
+        "unit": ingredient.unit,
+        "userId": this.props.id
+    })}>Add this ingredient to your list</button></div>)}
+    addRecipe={() => this.postDatabase("recipes",{
+        "id": null,//put check here later and make button diappear
+        "name": recipe.title,
+        "image": recipe.image,
+        "description": "null",
+        "ingredients": recipe.missedIngredients.map(ingredient =>ingredient.originalString),
+        "userId": this.props.id
+    })}
+    />);
         {/* store the values in state*/}
       this.setState({
         resultsHTML: elements

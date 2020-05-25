@@ -16,8 +16,7 @@ export default class Recipe extends Component {
           <h3>With the following ingredients:</h3>
           <div>{this.props.ingredients}</div>
           <div>
-              <button>Save Recipe and Ingredients to your profile</button>
-              <button>Save Ingredients to your profile</button>
+              <button onClick={this.props.addRecipe}>Save Ingredients to your profile</button>
           </div>
         </div>
       );
