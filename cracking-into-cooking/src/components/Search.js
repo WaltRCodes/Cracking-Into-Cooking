@@ -24,7 +24,7 @@ export default class Search extends Component {
     //const body = await response.json();
       //console.log(body);
       console.log(response.data);
-      let elements = response.data.map(recipe => <Recipe id={recipe.id}title={recipe.title} image={recipe.image} 
+      let elements = response.data.map(recipe => <Recipe id={recipe.id} search={true} editRecipe={''} title={recipe.title} image={recipe.image} 
         ingredients={recipe.missedIngredients.map(ingredient => <div>{ingredient.originalString}<div id={ingredient.id}><button onClick={() => {this.postDatabase("ingredients",{
         "id": this.state.ingredients.findIndex(stored => stored.name===ingredient.name)!=-1 ? this.state.ingredients[this.state.ingredients.findIndex(stored => stored.name===ingredient.name)].id:null,//put check here later and make button diappear
         "name": ingredient.name,

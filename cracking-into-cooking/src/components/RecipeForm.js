@@ -91,22 +91,22 @@ async callRecipes() {
             <h1>Enter the info for your new Recipe and please seperate ingredients with a ","</h1>
             <label>
                 Name
-                <input type="text" onChange={this.takeName} placeholder="name"/>
+                <input type="text" onChange={this.takeName} value={this.props.name} placeholder="name"/>
             </label>
             <br />
             <label>
                 Image URL
-                <input type="text" onChange={this.takeImage} placeholder="url"/>
+                <input type="text" onChange={this.takeImage} value={this.props.image} placeholder="url"/>
             </label>
             <br />
             <label>
                 Description
-                <input type="text" onChange={this.takeDescription} placeholder="lbs"/>
+                <input type="text" onChange={this.takeDescription} value={this.props.description} placeholder="lbs"/>
             </label>
             <br />
             <label>
                 Ingredients
-                <input type="number" onChange={this.takeIngredients} placeholder="0"/>
+                <input type="number" onChange={this.takeIngredients} value={this.props.ingredients} placeholder="0"/>
             </label>
             <br />
             <label>

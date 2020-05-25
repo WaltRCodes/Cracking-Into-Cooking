@@ -91,22 +91,22 @@ export default class IngredientForm extends Component {
             <h1>Enter the info for your new Ingredient</h1>
             <label>
                 Name
-                <input type="text" onChange={this.takeName} placeholder="name"/>
+                <input type="text" onChange={this.takeName} value={this.props.name} placeholder="name"/>
             </label>
             <br />
             <label>
                 Image URL
-                <input type="text" onChange={this.takeImage} placeholder="url"/>
+                <input type="text" onChange={this.takeImage} value={this.props.image} placeholder="url"/>
             </label>
             <br />
             <label>
                 Unit
-                <input type="text" onChange={this.takeUnit} placeholder="lbs"/>
+                <input type="text" onChange={this.takeUnit} value={this.props.unit} placeholder="lbs"/>
             </label>
             <br />
             <label>
                 Amount
-                <input type="number" onChange={this.takeAmount} placeholder="0"/>
+                <input type="number" onChange={this.takeAmount} value={this.props.amount} placeholder="0"/>
             </label>
             <br />
             <label>
