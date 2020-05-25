@@ -8,7 +8,7 @@ export default class IngredientForm extends Component {
       name: "",
       image: "",
       unit: "",
-      amount:0,
+      amount:0.0,
       ingredients:[],
       submittingInfo:true
          
@@ -72,14 +72,14 @@ export default class IngredientForm extends Component {
   takeImage(event){
     this.setState({image: event.target.value});
   }
-  takeUnit(event){
-    this.setState({unit: parseInt(event.target.value)});
-  }
   takeAmount(event){
+    this.setState({unit: parseFloat(event.target.value)});
+  }
+  takeUnit(event){
     this.setState({amount: event.target.value});
   }
   
-
+//onclick of the update button, have the values of that cell sent as props here to fill in the form
 
   render() {
     return (
