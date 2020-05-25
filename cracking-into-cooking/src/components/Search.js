@@ -24,23 +24,23 @@ export default class Search extends Component {
     //const body = await response.json();
       //console.log(body);
       console.log(response.data);
-      let elements = response.data.map(recipe => <Recipe title={recipe.title} image={recipe.image} 
-        ingredients={recipe.missedIngredients.map(ingredient => <div>{ingredient.originalString}<button onClick={() => this.postDatabase("ingredients",{
-        "id": null,//put check here later and make button diappear
+      let elements = response.data.map(recipe => <Recipe id={recipe.id}title={recipe.title} image={recipe.image} 
+        ingredients={recipe.missedIngredients.map(ingredient => <div>{ingredient.originalString}<div id={ingredient.id}><button onClick={() => {this.postDatabase("ingredients",{
+        "id": this.state.ingredients.findIndex(stored => stored.name===ingredient.name)!=-1 ? this.state.ingredients[this.state.ingredients.findIndex(stored => stored.name===ingredient.name)].id:null,//put check here later and make button diappear
         "name": ingredient.name,
-        "amount": ingredient.amount,
+        "amount": this.state.ingredients.findIndex(stored => stored.name===ingredient.name)!=-1 ? this.state.ingredients[this.state.ingredients.findIndex(stored => stored.name===ingredient.name)].amount+ingredient.amount:ingredient.amount,
         "image": ingredient.image,
         "unit": ingredient.unit,
         "userId": this.props.id
-    })}>Add this ingredient to your list</button></div>)}
-    addRecipe={() => this.postDatabase("recipes",{
+    }); document.getElementById(ingredient.id).innerHTML="Added Ingredient!";}}>Add this ingredient to your list</button></div></div>)}
+    addRecipe={() => {this.postDatabase("recipes",{
         "id": null,//put check here later and make button diappear
         "name": recipe.title,
         "image": recipe.image,
         "description": "null",
         "ingredients": recipe.missedIngredients.map(ingredient =>ingredient.originalString),
         "userId": this.props.id
-    })}
+    }); document.getElementById(recipe.id).innerHTML="Added Recipe!";}}
     />);
         {/* store the values in state*/}
       this.setState({
@@ -53,16 +53,27 @@ export default class Search extends Component {
 
   componentDidMount() {
     {/* call the api on page load */}
-    this.callDatabase("ingredients");
-    this.callDatabase("recipes");
+    this.callIngredients();
+    this.callRecipes();
 }
   
-  async callDatabase(term) {
+  async callIngredients() {
     try {
-        const response = await axios.get('/walter_api/v2/'+term);
+        const response = await axios.get('/walter_api/v2/ingredients');
         //console.log(response.data);
         {/* store api data in state */}
-        this.setState({term:response.data});
+        this.setState({ingredients:response.data});
+    } catch (e) {
+    console.log(e);
+    }
+}
+
+async callRecipes() {
+    try {
+        const response = await axios.get('/walter_api/v2/recipes');
+        //console.log(response.data);
+        {/* store api data in state */}
+        this.setState({recipes:response.data});
     } catch (e) {
     console.log(e);
     }
