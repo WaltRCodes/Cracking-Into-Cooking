@@ -27,7 +27,7 @@ export default class Profile extends Component {
       let elements = <div>Error</div>;
       if (term==='recipes'){
         elements = response.data.map(recipe => <Recipe id={recipe.id}  search={false} title={recipe.title} image={recipe.image} 
-            ingredients={recipe.ingredients.map(ingredient => <div>{ingredient.originalString}<div id={ingredient.id}></div></div>)}
+            ingredients={recipe.ingredients.map(ingredient => <div>{ingredient}</div>)}
         deleteRecipe={() => {this.deleteApi("recipes",recipe.id); document.getElementById(recipe.id).innerHTML="Deleted Recipe!";}}
         editRecipe={
             <Link to="/RecipeForm" onClick={() => this.props.capture("recipes",recipe.name,recipe.image,recipe.description,recipe.ingredients)} >

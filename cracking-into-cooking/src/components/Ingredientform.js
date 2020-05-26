@@ -5,10 +5,10 @@ export default class IngredientForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      image: "",
-      unit: "",
-      amount:0.0,
+      name: this.props.name,
+      image: this.props.image,
+      unit: this.props.unit,
+      amount:parseFloat(this.props.amount),
       ingredients:[],
       submittingInfo:true
          
@@ -24,6 +24,10 @@ export default class IngredientForm extends Component {
   componentDidMount() {
     {/* call the api on page load */}
     this.callIngredients();
+    document.getElementById('ingredientname').value=this.props.name;
+    document.getElementById('ingredientimage').value=this.props.image;
+    document.getElementById('ingredientunit').value=this.props.unit;
+    document.getElementById('ingredientamt').value=this.props.amount;
 }
   
   async callIngredients() {
@@ -54,7 +58,7 @@ export default class IngredientForm extends Component {
     let ingredient = {
         "id": this.state.ingredients.findIndex(stored => stored.name===this.state.name)!=-1 ? this.state.ingredients[this.state.ingredients.findIndex(stored => stored.name===this.state.name)].id:null,//put check here later and make button diappear
         "name": this.state.name,
-        "amount": this.state.ingredients.findIndex(stored => stored.name===this.state.name)!=-1 ? this.state.ingredients[this.state.ingredients.findIndex(stored => stored.name===this.state.name)].amount+this.state.amount:this.state.amount,
+        "amount": this.state.amount,
         "image": this.state.image,
         "unit": this.state.unit,
         "userId": this.props.id
@@ -73,10 +77,10 @@ export default class IngredientForm extends Component {
     this.setState({image: event.target.value});
   }
   takeAmount(event){
-    this.setState({unit: parseFloat(event.target.value)});
+    this.setState({amount: parseFloat(event.target.value)});
   }
   takeUnit(event){
-    this.setState({amount: event.target.value});
+    this.setState({unit: event.target.value});
   }
   
 //onclick of the update button, have the values of that cell sent as props here to fill in the form
@@ -91,22 +95,22 @@ export default class IngredientForm extends Component {
             <h1>Enter the info for your new Ingredient</h1>
             <label>
                 Name
-                <input type="text" onChange={this.takeName} value={this.props.name} placeholder="name"/>
+                <input type="text" onChange={this.takeName} id="ingredientname" enabled="true"/>
             </label>
             <br />
             <label>
                 Image URL
-                <input type="text" onChange={this.takeImage} value={this.props.image} placeholder="url"/>
+                <input type="text" onChange={this.takeImage} id="ingredientimage" enabled="true"/>
             </label>
             <br />
             <label>
                 Unit
-                <input type="text" onChange={this.takeUnit} value={this.props.unit} placeholder="lbs"/>
+                <input type="text" onChange={this.takeUnit} id="ingredientunit" enabled="true"/>
             </label>
             <br />
             <label>
                 Amount
-                <input type="number" onChange={this.takeAmount} value={this.props.amount} placeholder="0"/>
+                <input type="number" onChange={this.takeAmount} id="ingredientamt" enabled="true"/>
             </label>
             <br />
             <label>

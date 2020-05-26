@@ -5,11 +5,11 @@ export default class RecipeForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      image: "",
-      description: "",
+      name: this.props.name,
+      image: this.props.image,
+      description: this.props.description,
       recipes:[],
-      ingredients:[''],
+      ingredients:this.props.ingredients.split(','),
       submittingInfo:true
          
     }
@@ -24,6 +24,10 @@ export default class RecipeForm extends Component {
   componentDidMount() {
     {/* call the api on page load */}
     this.callRecipes();
+    document.getElementById('recipename').value=this.props.name;
+    document.getElementById('recipeimage').value=this.props.image;
+    document.getElementById('recipedescription').value=this.props.description;
+    document.getElementById('recipeingredients').value=this.props.ingredients;
 }
 
 async callRecipes() {
@@ -91,22 +95,22 @@ async callRecipes() {
             <h1>Enter the info for your new Recipe and please seperate ingredients with a ","</h1>
             <label>
                 Name
-                <input type="text" onChange={this.takeName} value={this.props.name} placeholder="name"/>
+                <input type="text" onChange={this.takeName} id="recipename" enabled="true" />
             </label>
             <br />
             <label>
                 Image URL
-                <input type="text" onChange={this.takeImage} value={this.props.image} placeholder="url"/>
+                <input type="text" onChange={this.takeImage} id="recipeimage" enabled="true"/>
             </label>
             <br />
             <label>
                 Description
-                <input type="text" onChange={this.takeDescription} value={this.props.description} placeholder="lbs"/>
+                <input type="text" onChange={this.takeDescription} id="recipedescription" enabled="true" />
             </label>
             <br />
             <label>
                 Ingredients
-                <input type="text" onChange={this.takeIngredients} value={this.props.ingredients} placeholder="0"/>
+                <input type="text" onChange={this.takeIngredients} id="recipeingredients" enabled="true"/>
             </label>
             <br />
             <label>
