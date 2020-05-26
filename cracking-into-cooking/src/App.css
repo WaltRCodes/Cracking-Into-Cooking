@@ -28,9 +28,14 @@
   grid-template-rows: repeat(10, 1fr);
   width: 100%;
   grid-gap: 1em;
+  padding-top: 30px;
 }
 
 .cell{
   grid-column: span 3;
   grid-row: span 2;
+  border: solid 2px;
+}
+button{
+  font-size: larger;
 }

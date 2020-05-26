@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import Recipe from './Recipe';
 import {Link } from "react-router-dom";
+//changed the name to Home
 export default class Profile extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +28,7 @@ export default class Profile extends Component {
       let data = response.data.filter(obj => obj.userId === this.props.id);
       let elements = <div>Error</div>;
       if (term==='recipes'){
-        elements = data.map(recipe => <Recipe id={recipe.id}  search={false} title={recipe.title} image={recipe.image} 
+        elements = data.map(recipe => <Recipe id={recipe.id}  search={false} title={recipe.name} image={recipe.image} 
             ingredients={recipe.ingredients.map(ingredient => <div>{ingredient}</div>)}
         deleteRecipe={() => {this.deleteApi("recipes",recipe.id); document.getElementById(recipe.id).innerHTML="Deleted Recipe!";}}
         editRecipe={
@@ -112,9 +113,9 @@ async deleteApi(term,id) {
     return (
       <div>
             
-            <h1>Check out your saved recipes and Ingredients</h1>
-            <button onClick={this.bringUpRecipes}>See what Recipes you saved or made</button>
-            <button onClick={this.bringUpIngredients}>See what Ingredients you have added</button>
+            <h1>Check out your saved recipes and ingredients</h1>
+            <button onClick={this.bringUpRecipes}>Saved Recipes</button>
+            <button onClick={this.bringUpIngredients}>Saved Ingredients</button>
             <div className="grid">{this.state.resultsHTML}</div>
       </div>
       

@@ -108,7 +108,7 @@ async postDatabase(term,object) {
 
   render() {
     return (
-      <div>
+      <div className="main">
             <form onSubmit={this.makeSearch}>
             <h1>What Ingredients do you already have?</h1>
             <label>
