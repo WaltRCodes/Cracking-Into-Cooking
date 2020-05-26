@@ -8,7 +8,7 @@ People who want to find a quick recipe with the ingredients they have
 
 ## Deployed App
 
-[Here is a link to the deployed application](http://crackingcooking.surge.sh// "Here!")
+[Here is a link to the deployed application](http://crackingcooking.surge.sh/ "Here!")
 
 ## Wireframe
 
