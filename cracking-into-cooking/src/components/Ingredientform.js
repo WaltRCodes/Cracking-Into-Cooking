@@ -87,7 +87,7 @@ export default class IngredientForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="main">
         {
             this.state.submittingInfo
             ?

@@ -56,7 +56,7 @@ export default class SignUpPage  extends Component {
  
   render() {
     return (
-        <div>
+        <div className="main">
           <h1>Sign Up</h1>
           <div>
             {this.state.message}

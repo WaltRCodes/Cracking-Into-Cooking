@@ -87,7 +87,7 @@ async callRecipes() {
 
   render() {
     return (
-      <div>
+      <div className="main">
         {
             this.state.submittingInfo
             ?

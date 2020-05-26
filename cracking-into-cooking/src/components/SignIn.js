@@ -61,7 +61,7 @@ export default class SignIn extends Component {
 
       render() {
         return (
-            <div>
+            <div className="main">
               <h1>Sign In</h1>
               <div >
                 {this.state.error}
