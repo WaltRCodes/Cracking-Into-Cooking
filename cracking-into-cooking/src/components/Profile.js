@@ -112,7 +112,7 @@ async deleteApi(term,id) {
     return (
       <div>
             
-            <h1>What Ingredients do you already have?</h1>
+            <h1>Check out your saved recipes and Ingredients</h1>
             <button onClick={this.bringUpRecipes}>See what Recipes you saved or made</button>
             <button onClick={this.bringUpIngredients}>See what Ingredients you have added</button>
             {this.state.resultsHTML}
