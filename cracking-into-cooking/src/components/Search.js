@@ -18,7 +18,7 @@ export default class Search extends Component {
   }
   async callApi() {
     try {
-      const response = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_KEY}&ingredients=${this.state.searchTerm}&number=5&limitLicense=false&ranking=1&ignorePantry=false`);
+      const response = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_KEY}&ingredients=${this.state.searchTerm}&number=10&limitLicense=false&ranking=1&ignorePantry=false`);
       {/* call the API and create HTML elements*/}
       //const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_KEY}&ingredients=${this.state.searchTerm}&number=2&limitLicense=false&ranking=1&ignorePantry=false`);
     //const body = await response.json();
