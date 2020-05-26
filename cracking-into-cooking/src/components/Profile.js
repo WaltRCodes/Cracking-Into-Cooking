@@ -38,7 +38,7 @@ export default class Profile extends Component {
         />);
       }else if(term==='ingredients'){
         elements = data.map(ingredient => 
-        <div>
+        <div className="cell">
             <p>{ingredient.amount} {ingredient.unit} of {ingredient.name}</p>
             <img src={ingredient.image}/>
             <Link to="/IngredientForm" onClick={() => this.props.capture('ingredients',ingredient.name,ingredient.image,ingredient.unit,ingredient.amount)} >
@@ -115,7 +115,7 @@ async deleteApi(term,id) {
             <h1>Check out your saved recipes and Ingredients</h1>
             <button onClick={this.bringUpRecipes}>See what Recipes you saved or made</button>
             <button onClick={this.bringUpIngredients}>See what Ingredients you have added</button>
-            {this.state.resultsHTML}
+            <div className="grid">{this.state.resultsHTML}</div>
       </div>
       
     )

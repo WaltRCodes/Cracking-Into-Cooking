@@ -122,7 +122,7 @@ async postDatabase(term,object) {
                 <input type="submit" value="Submit"/>
             </label>
           </form>
-            {this.state.resultsHTML}
+            <div className="grid">{this.state.resultsHTML}</div>
       </div>
       
     )

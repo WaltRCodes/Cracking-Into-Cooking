@@ -10,7 +10,7 @@ export default class Recipe extends Component {
    
   render() {
     return (
-        <div>
+        <div className="cell">
           <h1>You can make {this.props.title}</h1>
           <img src={this.props.image} />
           <h3>With the following ingredients:</h3>
