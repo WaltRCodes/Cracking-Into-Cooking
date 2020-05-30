@@ -19,7 +19,7 @@ export default class Profile extends Component {
   }
   async callApi(term) {
     try {
-      const response = await axios.get('/walter_api/v2/'+term);
+      const response = await axios.get('https://cors-anywhere.herokuapp.com/https://nameless-dawn-18115.herokuapp.com/walter_api/v2/'+term);
       {/* call the API and create HTML elements*/}
       //const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_KEY}&ingredients=${this.state.searchTerm}&number=2&limitLicense=false&ranking=1&ignorePantry=false`);
     //const body = await response.json();
@@ -91,7 +91,7 @@ export default class Profile extends Component {
 async deleteApi(term,id) {
     console.log("This is running",id);
     try {
-      const response = await axios.delete('/walter_api/v2/'+term+'/'+id);
+      const response = await axios.delete('https://cors-anywhere.herokuapp.com/https://nameless-dawn-18115.herokuapp.com/walter_api/v2/'+term+'/'+id);
       
       console.log(response.data);
       console.log(response);

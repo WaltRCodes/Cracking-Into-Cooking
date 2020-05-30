@@ -32,7 +32,7 @@ export default class IngredientForm extends Component {
   
   async callIngredients() {
     try {
-        const response = await axios.get('/walter_api/v2/ingredients');
+        const response = await axios.get('https://cors-anywhere.herokuapp.com/https://nameless-dawn-18115.herokuapp.com/walter_api/v2/ingredients');
         //console.log(response.data);
         {/* store api data in state */}
         this.setState({ingredients:response.data});
@@ -43,7 +43,7 @@ export default class IngredientForm extends Component {
   
   async postApi(object) {
     try {
-      const response = await axios.post('/walter_api/v2/ingredients',object);
+      const response = await axios.post('https://cors-anywhere.herokuapp.com/https://nameless-dawn-18115.herokuapp.com/walter_api/v2/ingredients',object);
       
       console.log(response.data);
       console.log(response);

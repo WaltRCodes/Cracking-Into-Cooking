@@ -43,7 +43,7 @@ export default class SignUpPage  extends Component {
 
   async postApi(object) {
     try {
-      const response = await axios.post('/walter_api/v2/users',object);
+      const response = await axios.post('https://cors-anywhere.herokuapp.com/https://nameless-dawn-18115.herokuapp.com/walter_api/v2/users',object);
       
       console.log(response.data);
       console.log(response);

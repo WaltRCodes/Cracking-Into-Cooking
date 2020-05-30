@@ -59,7 +59,7 @@ export default class Search extends Component {
   
   async callIngredients() {
     try {
-        const response = await axios.get('/walter_api/v2/ingredients');
+        const response = await axios.get('https://cors-anywhere.herokuapp.com/https://nameless-dawn-18115.herokuapp.com/walter_api/v2/ingredients');
         //console.log(response.data);
         {/* store api data in state */}
         this.setState({ingredients:response.data});
@@ -70,7 +70,7 @@ export default class Search extends Component {
 
 async callRecipes() {
     try {
-        const response = await axios.get('/walter_api/v2/recipes');
+        const response = await axios.get('https://cors-anywhere.herokuapp.com/https://nameless-dawn-18115.herokuapp.com/walter_api/v2/recipes');
         //console.log(response.data);
         {/* store api data in state */}
         this.setState({recipes:response.data});
@@ -81,7 +81,7 @@ async callRecipes() {
 
 async postDatabase(term,object) {
     try {
-      const response = await axios.post('/walter_api/v2/'+term,object);
+      const response = await axios.post('https://cors-anywhere.herokuapp.com/https://nameless-dawn-18115.herokuapp.com/walter_api/v2/'+term,object);
       
       console.log(response.data);
       console.log(response);

@@ -32,7 +32,7 @@ export default class RecipeForm extends Component {
 
 async callRecipes() {
     try {
-        const response = await axios.get('/walter_api/v2/recipes');
+        const response = await axios.get('https://cors-anywhere.herokuapp.com/https://nameless-dawn-18115.herokuapp.com/walter_api/v2/recipes');
         //console.log(response.data);
         {/* store api data in state */}
         this.setState({recipes:response.data});
@@ -43,7 +43,7 @@ async callRecipes() {
   
   async postApi(object) {
     try {
-      const response = await axios.post('/walter_api/v2/recipes',object);
+      const response = await axios.post('https://cors-anywhere.herokuapp.com/https://nameless-dawn-18115.herokuapp.com/walter_api/v2/recipes',object);
       
       console.log(response.data);
       console.log(response);
