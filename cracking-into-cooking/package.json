@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8090",
+  "proxy": "https://nameless-dawn-18115.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },
