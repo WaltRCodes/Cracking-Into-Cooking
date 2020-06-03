@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d2d4b79bc4c9464fbfbfdcb2b5989c19",
+    "revision": "cba2e57ef0c210f0ff40d7a8229c1c1a",
     "url": "/cracking-into-cooking/index.html"
   },
   {
-    "revision": "29e7b21d8a00935563e8",
+    "revision": "7437b7bf69a2a8f0b0ad",
     "url": "/cracking-into-cooking/static/css/main.fc313730.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cracking-into-cooking/static/js/2.acab4de5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "29e7b21d8a00935563e8",
-    "url": "/cracking-into-cooking/static/js/main.cc31bf95.chunk.js"
+    "revision": "7437b7bf69a2a8f0b0ad",
+    "url": "/cracking-into-cooking/static/js/main.9dd97acf.chunk.js"
   },
   {
     "revision": "f103065445a0806f3056",
