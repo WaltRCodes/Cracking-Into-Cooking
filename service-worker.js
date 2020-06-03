@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Cracking-Into-Cooking/precache-manifest.290859efbf17afc7deb280831d281efe.js"
+  "/Cracking-Into-Cooking/precache-manifest.9a62ba93d1d115c50077718cad0e3035.js"
 );
 
 self.addEventListener('message', (event) => {
