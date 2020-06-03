@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/cracking-into-cooking/static/css/main.fc313730.chunk.css",
-    "main.js": "/cracking-into-cooking/static/js/main.9dd97acf.chunk.js",
-    "main.js.map": "/cracking-into-cooking/static/js/main.9dd97acf.chunk.js.map",
-    "runtime-main.js": "/cracking-into-cooking/static/js/runtime-main.c2e0b044.js",
-    "runtime-main.js.map": "/cracking-into-cooking/static/js/runtime-main.c2e0b044.js.map",
-    "static/js/2.acab4de5.chunk.js": "/cracking-into-cooking/static/js/2.acab4de5.chunk.js",
-    "static/js/2.acab4de5.chunk.js.map": "/cracking-into-cooking/static/js/2.acab4de5.chunk.js.map",
-    "index.html": "/cracking-into-cooking/index.html",
-    "precache-manifest.3ff2811fcd2814d7505b99a7641427c1.js": "/cracking-into-cooking/precache-manifest.3ff2811fcd2814d7505b99a7641427c1.js",
-    "service-worker.js": "/cracking-into-cooking/service-worker.js",
-    "static/css/main.fc313730.chunk.css.map": "/cracking-into-cooking/static/css/main.fc313730.chunk.css.map",
-    "static/js/2.acab4de5.chunk.js.LICENSE.txt": "/cracking-into-cooking/static/js/2.acab4de5.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/cracking-into-cooking/static/media/logo.5d5d9eef.svg"
+    "main.css": "/Cracking-Into-Cooking/static/css/main.fc313730.chunk.css",
+    "main.js": "/Cracking-Into-Cooking/static/js/main.7bc0bf8d.chunk.js",
+    "main.js.map": "/Cracking-Into-Cooking/static/js/main.7bc0bf8d.chunk.js.map",
+    "runtime-main.js": "/Cracking-Into-Cooking/static/js/runtime-main.551173f3.js",
+    "runtime-main.js.map": "/Cracking-Into-Cooking/static/js/runtime-main.551173f3.js.map",
+    "static/js/2.acab4de5.chunk.js": "/Cracking-Into-Cooking/static/js/2.acab4de5.chunk.js",
+    "static/js/2.acab4de5.chunk.js.map": "/Cracking-Into-Cooking/static/js/2.acab4de5.chunk.js.map",
+    "index.html": "/Cracking-Into-Cooking/index.html",
+    "precache-manifest.9985582e2e5cf382a7f2b4aa5a4c0135.js": "/Cracking-Into-Cooking/precache-manifest.9985582e2e5cf382a7f2b4aa5a4c0135.js",
+    "service-worker.js": "/Cracking-Into-Cooking/service-worker.js",
+    "static/css/main.fc313730.chunk.css.map": "/Cracking-Into-Cooking/static/css/main.fc313730.chunk.css.map",
+    "static/js/2.acab4de5.chunk.js.LICENSE.txt": "/Cracking-Into-Cooking/static/js/2.acab4de5.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/Cracking-Into-Cooking/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c2e0b044.js",
+    "static/js/runtime-main.551173f3.js",
     "static/js/2.acab4de5.chunk.js",
     "static/css/main.fc313730.chunk.css",
-    "static/js/main.9dd97acf.chunk.js"
+    "static/js/main.7bc0bf8d.chunk.js"
   ]
 }
