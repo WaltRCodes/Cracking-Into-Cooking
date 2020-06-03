@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1fab21e6441d99035cea26c252f37e6b",
+    "revision": "1a6f952c94a4de3aad7ba0c3e2ab3fe2",
     "url": "/Cracking-Into-Cooking/index.html"
   },
   {
-    "revision": "674cd22819c2882103a4",
+    "revision": "019dd9f85b4d31fbf1c2",
     "url": "/Cracking-Into-Cooking/static/css/main.fc313730.chunk.css"
   },
   {
-    "revision": "fedadb7380b6ea80237b",
-    "url": "/Cracking-Into-Cooking/static/js/2.acab4de5.chunk.js"
+    "revision": "bce812fcdbec499bc025",
+    "url": "/Cracking-Into-Cooking/static/js/2.a8e87119.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/Cracking-Into-Cooking/static/js/2.acab4de5.chunk.js.LICENSE.txt"
+    "url": "/Cracking-Into-Cooking/static/js/2.a8e87119.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "674cd22819c2882103a4",
-    "url": "/Cracking-Into-Cooking/static/js/main.7bc0bf8d.chunk.js"
+    "revision": "019dd9f85b4d31fbf1c2",
+    "url": "/Cracking-Into-Cooking/static/js/main.0b5e28af.chunk.js"
   },
   {
     "revision": "3980cc1842c2edc31adb",
