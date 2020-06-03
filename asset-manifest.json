@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Cracking-Into-Cooking/static/css/main.fc313730.chunk.css",
-    "main.js": "/Cracking-Into-Cooking/static/js/main.aac29e22.chunk.js",
-    "main.js.map": "/Cracking-Into-Cooking/static/js/main.aac29e22.chunk.js.map",
+    "main.js": "/Cracking-Into-Cooking/static/js/main.7bc0bf8d.chunk.js",
+    "main.js.map": "/Cracking-Into-Cooking/static/js/main.7bc0bf8d.chunk.js.map",
     "runtime-main.js": "/Cracking-Into-Cooking/static/js/runtime-main.551173f3.js",
     "runtime-main.js.map": "/Cracking-Into-Cooking/static/js/runtime-main.551173f3.js.map",
     "static/js/2.acab4de5.chunk.js": "/Cracking-Into-Cooking/static/js/2.acab4de5.chunk.js",
     "static/js/2.acab4de5.chunk.js.map": "/Cracking-Into-Cooking/static/js/2.acab4de5.chunk.js.map",
     "index.html": "/Cracking-Into-Cooking/index.html",
-    "precache-manifest.9a62ba93d1d115c50077718cad0e3035.js": "/Cracking-Into-Cooking/precache-manifest.9a62ba93d1d115c50077718cad0e3035.js",
+    "precache-manifest.9985582e2e5cf382a7f2b4aa5a4c0135.js": "/Cracking-Into-Cooking/precache-manifest.9985582e2e5cf382a7f2b4aa5a4c0135.js",
     "service-worker.js": "/Cracking-Into-Cooking/service-worker.js",
     "static/css/main.fc313730.chunk.css.map": "/Cracking-Into-Cooking/static/css/main.fc313730.chunk.css.map",
     "static/js/2.acab4de5.chunk.js.LICENSE.txt": "/Cracking-Into-Cooking/static/js/2.acab4de5.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.551173f3.js",
     "static/js/2.acab4de5.chunk.js",
     "static/css/main.fc313730.chunk.css",
-    "static/js/main.aac29e22.chunk.js"
+    "static/js/main.7bc0bf8d.chunk.js"
   ]
 }
