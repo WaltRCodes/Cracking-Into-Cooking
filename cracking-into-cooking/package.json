@@ -12,12 +12,14 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://nameless-dawn-18115.herokuapp.com",
+  "homepage": "https://waltrcodes.github.io/Cracking-Into-Cooking",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -32,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.0.0"
   }
 }

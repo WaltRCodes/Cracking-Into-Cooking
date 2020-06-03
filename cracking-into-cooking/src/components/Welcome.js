@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    BrowserRouter,
+    HashRouter,
     Route
   } from "react-router-dom";
 import SignIn from './SignIn';
@@ -63,19 +63,19 @@ export default class Welcome extends Component {
     return (
       <div>
           {this.state.signedIn ?
-            <BrowserRouter>
+            <HashRouter>
                 <Navbar />
                 <Route exact strict path="/" render={() => <div><Profile id={this.state.user} capture={this.editOrDelete}/></div>} />
                 <Route path="/Search" render={() => <div><Search id={this.state.user}/></div>} />
                 <Route path="/RecipeForm" render={() => <div><RecipeForm id={this.state.user} name={this.state.recipe.name} image={this.state.recipe.image} description={this.state.recipe.description} ingredients={this.state.recipe.ingredients}/></div>} />
                 <Route path="/IngredientForm" render={() => <div><IngredientForm id={this.state.user} name={this.state.ingredient.name} image={this.state.ingredient.image} unit={this.state.ingredient.unit} amount={this.state.ingredient.amount}/></div>} />
-            </BrowserRouter>
+            </HashRouter>
             
         :
-            <BrowserRouter>
+            <HashRouter>
                 <Route exact strict path="/" render={() => <div><SignIn Allowed={this.signingIn}/></div>} />
                 <Route path="/SignUp" render={() => <div><SignUp/></div>} />
-            </BrowserRouter>
+            </HashRouter>
         }
         
         
